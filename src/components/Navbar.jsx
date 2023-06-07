@@ -36,7 +36,7 @@ export default function Navbar() {
         }} position="static" color="neutral">
           <Toolbar>
             <Typography className="title" variant="h5" component="div" sx={{ flexGrow: 1 }}>
-              DT Corredores
+            Harmoni <span className="mark_prop">Prop</span>
             </Typography>
             <NavLink exact to="/" style={{ color: "white" }}>
               <Button color="inherit">Home</Button>

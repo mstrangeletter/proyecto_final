@@ -23,14 +23,16 @@ const PropertyCard = ({ property }) => {
   return (
     <article className="article_property card ">
       <div className="card_content_property">
-        <h2 className="card_title">{property.tipo}</h2>
-        <p className="card_description">{property.descripcion}</p>
-        <h1 className="card_region">{property.region}</h1>
-        <p className="card_price">{property.precio}</p>
-      </div>
-
+        <h1 className="card_title">{property.tipo}</h1>
+        <div className="container_desc">
       <img className="img" src={property.img} alt="" />
+        <h2 className="card_region">{property.region}</h2>
+        <p className="card_description"> {property.descripcion}</p>
+        <p className="card_price">{property.precio}</p>
+        </div>
+      </div>
       <div className="button-fav">
+
         <FavButton onClick={handleFavButtonClick} filled={isPropertyInFavorites} property={property} />
       </div>
       <div className="btns">
@@ -38,7 +40,9 @@ const PropertyCard = ({ property }) => {
           <span className="circle" aria-hidden="true">
             <span className="icon arrow"></span>
           </span>
-          <span className="button-text">Agendar Visita</span>
+          <span 
+          onClick=""
+          className="button-text">Agendar Visita</span>
         </button>
       </div>
     </article>

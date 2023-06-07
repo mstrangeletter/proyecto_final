@@ -77,6 +77,6 @@
   
   .section {
     height: auto;
-    max-height: max-content;
+    height: auto;
   }
 }

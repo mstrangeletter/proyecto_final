@@ -31,7 +31,7 @@
       margin: 0;
       width: 3rem;
       height: 3rem;
-      background: #282936;
+      background: #0E1A59;
       border-radius: 1.625rem;
   }
 
@@ -71,8 +71,8 @@
       left: 2;
       right: 0;
       bottom: 0;
-      padding: 0.75rem 0;
-      margin: 0 0 0 1.85rem;
+      margin-left: 1rem 0;
+      margin: 0 0 0 2rem;
       color: #282936;
       font-weight: 700;
       line-height: 1.6;
@@ -103,10 +103,11 @@
   .article_property {
       position: relative;
       width: 25rem;
-      height: 450px;
+      height: 490px;
       color: black;
       font-size: 1.2rem;
-      background: #aaabb1;
+      background-color: white;
+      border: 1px solid #aaabb1;
       overflow: hidden;
       border-radius: 20px;
   }
@@ -129,7 +130,9 @@
       bottom: 0;
       width: 100%;
       padding: 10px;
-      background: #f2f2f2;
+      background: linear-gradient(225deg, #ffffff, #e6e6e6);
+      box-shadow: -27px 27px 54px #bababa,
+          27px -27px 54px #ffffff;
       border-top-left-radius: 20px;
       transform: translateY(10px);
       transition: transform .25s;
@@ -138,11 +141,11 @@
   .card_content::before {
       content: '';
       position: absolute;
-      top: -47px;
-      right: -45px;
+      top: -100px;
+      right: -100px;
       width: 100px;
       height: 100px;
-      transform: rotate(-175deg);
+      transform: rotate(-200deg);
       border-radius: 50%;
       box-shadow: inset 48px 48px #f2f2f2;
   }
@@ -154,11 +157,11 @@
   }
 
   .card_subtitle {
-    
+
       display: block;
       font-size: 12px;
       margin-bottom: 10px;
-      
+
   }
 
   .card_description {
@@ -178,9 +181,30 @@
       transition-delay: .25s;
   }
 
-  
+
   .button-fav {
-    position: absolute;
-    top: 10px;
-    right: 10px;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+  }
+
+  .container_desc h2 {
+      margin-left: 0rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+
+  h2 {
+      text-align: center;
+      margin-left: 2rem;
+
+  }
+
+  .card_price {
+      padding-left: 2rem;
+  }
+  .card_region h2 {
+    margin-bottom: 0;
+    padding-bottom: 0;
   }
