@@ -34,7 +34,9 @@ function Footer() {
             <Box sx={{
                 display:"block"
             }}>
-              <Typography variant="h6" color="inherit">DT Corredores</Typography>
+              <Typography className="title" variant="h5" component="div" sx={{ flexGrow: 1 }}>
+            Harmoni <span className="mark_prop">Prop</span>
+            </Typography>
 
             </Box>
             </Grid>
