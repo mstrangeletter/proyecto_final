@@ -31,7 +31,7 @@ const PropertyProvider = ({ children }) => {
   }, [property]);
 
   useEffect(() => {
-    const uniqueCities = Array.from(new Set(property.map((propertyItem) => propertyItem.city)));
+    const uniqueCities = Array.from(new Set(property.map((propertyItem) => propertyItem.ciudad)));
     setCities(uniqueCities);
   }, [property]);
 

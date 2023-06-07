@@ -22,33 +22,31 @@ const Home = () => {
   };
 
   const handleCityChange = (event) => {
-    const selectedCity = event.target.value || ""; // Asegurar que el valor sea una cadena vacía si es undefined
+    const selectedCity = event.target.value || ""; 
     setSelectedCity(selectedCity);
     setSelectedComuna("");
   };
   
   const handleComunaChange = (event) => {
-    const selectedComuna = event.target.value || ""; // Asegurar que el valor sea una cadena vacía si es undefined
+    const selectedComuna = event.target.value || ""; 
     setSelectedComuna(selectedComuna);
   };
-  
-
   const filteredProperties = property.filter((propertyItem) => {
     const regionMatch = !selectedRegion || propertyItem.region === selectedRegion;
     const cityMatch = !selectedCity || propertyItem.city === selectedCity;
     const comunaMatch = !selectedComuna || propertyItem.comuna === selectedComuna;
-
+  
     return regionMatch && cityMatch && comunaMatch;
   });
-
+  
   const handleSearchTextChange = (text) => {
     setSearchText(text);
   };
-
+  
   const filteredAndSearchedProperties = filteredProperties.filter((propertyItem) =>
     propertyItem.descripcion.toLowerCase().includes(searchText.toLowerCase())
   );
-
+  
   return (
     <main>
       <div id="parallax-world-of-ugg">

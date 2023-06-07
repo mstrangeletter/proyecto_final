@@ -2,7 +2,7 @@ import { useContext, useState, useEffect } from "react";
 import { PropertyContext } from "../context/PropertyContext";
 import { FormControl, InputLabel, Select, MenuItem, Grid } from "@mui/material";
 
-export default function SelectFilter ({ onRegionChange, onCityChange, onComunaChange }) {
+export default function SelectFilter({ onRegionChange, onCityChange, onComunaChange }) {
   const { property } = useContext(PropertyContext);
   const [filteredProperties, setFilteredProperties] = useState(property);
   const [selectedRegion, setSelectedRegion] = useState("");
@@ -61,7 +61,7 @@ export default function SelectFilter ({ onRegionChange, onCityChange, onComunaCh
             id="region-select"
             value={selectedRegion}
             label="Región"
-            onChange={onRegionChange}
+            onChange={handleRegionChange}
           >
             {regions.map((region) => (
               <MenuItem key={region} value={region}>
@@ -69,9 +69,10 @@ export default function SelectFilter ({ onRegionChange, onCityChange, onComunaCh
               </MenuItem>
             ))}
           </Select>
+
         </FormControl>
       </Grid>
-  
+
       <Grid item xs={12} md={4} lg={3}>
         <FormControl size="medium" fullWidth>
           <InputLabel id="city-label">Ciudad</InputLabel>
@@ -79,21 +80,19 @@ export default function SelectFilter ({ onRegionChange, onCityChange, onComunaCh
             id="city-select"
             value={selectedCity}
             label="Ciudad"
-            onChange={onCityChange}
+            onChange={handleCityChange}
             disabled={!selectedRegion}
           >
-            {filteredProperties
-              .map((propertyItem) => propertyItem.city)
-              .filter((city, index, self) => self.indexOf(city) === index)
-              .map((city) => (
-                <MenuItem key={city} value={city}>
-                  {city}
-                </MenuItem>
-              ))}
+            {cities.map((city) => (
+              <MenuItem key={city} value={city}>
+                {city}
+              </MenuItem>
+            ))}
           </Select>
+
         </FormControl>
       </Grid>
-  
+
       <Grid item xs={12} md={4} lg={3}>
         <FormControl size="medium" fullWidth>
           <InputLabel id="comuna-label">Comuna</InputLabel>
@@ -101,15 +100,14 @@ export default function SelectFilter ({ onRegionChange, onCityChange, onComunaCh
             id="comuna-select"
             value={selectedComuna}
             label="Comuna"
-            onChange={onComunaChange}
+            onChange={handleComunaChange}
             disabled={!selectedCity}
           >
             {filteredProperties
-              .map((propertyItem) => propertyItem.comuna)
-              .filter((comuna, index, self) => self.indexOf(comuna) === index)
-              .map((comuna) => (
-                <MenuItem key={comuna} value={comuna}>
-                  {comuna}
+              .filter((item) => item.city === selectedCity)
+              .map((propertyItem) => (
+                <MenuItem key={propertyItem.comuna} value={propertyItem.comuna}>
+                  {propertyItem.comuna}
                 </MenuItem>
               ))}
           </Select>

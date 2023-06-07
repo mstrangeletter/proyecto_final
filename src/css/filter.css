@@ -2,6 +2,7 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
+    margin:auto;
     padding: 1rem;
     border: 1px solid #eae9e9;
     border-radius: 0.25rem;
@@ -21,7 +22,7 @@
     align-items: center;
     width: 100%;
     padding-top: 3rem;
-    margin: 2rem;
+    margin: auto;
     max-width: 100%;
     padding: 2rem;
     border: 1px solid #ececec;
@@ -30,3 +31,9 @@
     background-color: #fff;
     overflow: auto;
   }
+
+.container_selectbox {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
