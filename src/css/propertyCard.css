@@ -208,3 +208,18 @@
     margin-bottom: 0;
     padding-bottom: 0;
   }
+  .wsp_icon {
+    
+    width: 3rem;
+    height: 3rem;
+    margin-left: 2rem;
+    background-image: url("../assets/whatsapp.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    cursor: pointer;
+    transition: transform 0.3s; 
+  }
+  .wsp_icon:hover {
+    transform: scale(1.4); 
+  }
+
