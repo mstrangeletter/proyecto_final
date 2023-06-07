@@ -21,7 +21,7 @@ const PropertyCard = ({ property }) => {
   };
 
   return (
-    <article className="article card">
+    <article className="article_property card ">
       <div className="card_content_property">
         <h2 className="card_title">{property.tipo}</h2>
         <p className="card_description">{property.descripcion}</p>

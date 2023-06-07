@@ -100,13 +100,13 @@
 
   }
 
-  .card {
+  .article_property {
       position: relative;
       width: 25rem;
-      height: 400px;
+      height: 450px;
       color: black;
       font-size: 1.2rem;
-      background: #62659C;
+      background: #aaabb1;
       overflow: hidden;
       border-radius: 20px;
   }

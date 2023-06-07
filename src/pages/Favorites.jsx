@@ -3,9 +3,8 @@ import { FavoritesContext } from "../context/FavoritesContext";
 import PropertyCard from "../components/PropertyCard";
 import { Grid } from "@mui/material";
 
-
 const Favorites = () => {
-  const { favorites, deleteFavorite } = useContext(FavoritesContext);
+  const { favorites, deleteFavorites } = useContext(FavoritesContext);
 
   return (
     <div className="container_favorites">
@@ -18,7 +17,7 @@ const Favorites = () => {
             <Grid item xs={12} sm={6} md={4} key={property.id}>
               <PropertyCard
                 property={property}
-                handleFavButtonClick={deleteFavorite}
+                handleFavButtonClick={deleteFavorites}
                 isPropertyInFavorites={true}
               />
             </Grid>

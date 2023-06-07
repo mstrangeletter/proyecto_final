@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { PropertyContext } from "../context/PropertyContext";
 import { Grid } from "@mui/material";
 import PropertyCard from "../components/PropertyCard";
@@ -13,6 +13,7 @@ const Home = () => {
   const [selectedRegion, setSelectedRegion] = useState("");
   const [selectedCity, setSelectedCity] = useState("");
   const [selectedComuna, setSelectedComuna] = useState("");
+  const [filteredProperties, setFilteredProperties] = useState([]);
 
   const handleRegionChange = (event) => {
     const selectedRegion = event.target.value;
@@ -22,31 +23,37 @@ const Home = () => {
   };
 
   const handleCityChange = (event) => {
-    const selectedCity = event.target.value || ""; 
+    const selectedCity = event.target.value || "";
     setSelectedCity(selectedCity);
     setSelectedComuna("");
   };
-  
+
   const handleComunaChange = (event) => {
-    const selectedComuna = event.target.value || ""; 
+    const selectedComuna = event.target.value || "";
     setSelectedComuna(selectedComuna);
   };
-  const filteredProperties = property.filter((propertyItem) => {
-    const regionMatch = !selectedRegion || propertyItem.region === selectedRegion;
-    const cityMatch = !selectedCity || propertyItem.city === selectedCity;
-    const comunaMatch = !selectedComuna || propertyItem.comuna === selectedComuna;
-  
-    return regionMatch && cityMatch && comunaMatch;
-  });
-  
+
+  useEffect(() => {
+    const filteredProperties = property.filter((propertyItem) => {
+      const regionMatch = !selectedRegion || propertyItem.region === selectedRegion;
+      const cityMatch = !selectedCity || propertyItem.city === selectedCity;
+      const comunaMatch = !selectedComuna || propertyItem.comuna === selectedComuna;
+
+      return regionMatch && cityMatch && comunaMatch;
+    });
+
+    setFilteredProperties(filteredProperties);
+  }, [property, selectedRegion, selectedCity, selectedComuna]);
+
   const handleSearchTextChange = (text) => {
     setSearchText(text);
   };
-  
+
   const filteredAndSearchedProperties = filteredProperties.filter((propertyItem) =>
     propertyItem.descripcion.toLowerCase().includes(searchText.toLowerCase())
   );
-  
+
+
   return (
     <main>
       <div id="parallax-world-of-ugg">
