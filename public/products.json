@@ -1,0 +1,66 @@
+[
+  {
+    "id": 1,
+    "title": "Batería electrónica Alesis Nitro Mesh",
+    "user": "test@test.com",
+    "description": "La mejor batería para iniciar en el mundo de la percución, poco uso",
+    "price": "$350.000",
+    "img": "https://images.unsplash.com/photo-1600779547877-be592ef5aad3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+  },
+  {
+    "id": 2,
+    "title": "Guitarra Dean 350f",
+    "user": "test@test.com",
+    "description": "Una guitarra increible con todo lo que necesitas para tus solos rockeros",
+    "price": "$550.000",
+    "img": "https://images.unsplash.com/photo-1563357989-f6cdbbae76cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80"
+  },
+  {
+    "id": 3,
+    "title": "Teclado Yamaha",
+    "user": "test@test.com",
+    "description": "Lo compré pero nunca lo usé, está como nuevo",
+    "price": "$200.000",
+    "img": "https://images.unsplash.com/photo-1593801398340-e2f33f6e3e53?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+  },
+  {
+    "id": 4,
+    "title": "Amplificador de guitarra Fender",
+    "user": "test@test.com",
+    "description": "Potente amplificador de guitarra para tus ensayos y presentaciones en vivo",
+    "price": "$800.000",
+    "img": "https://images.unsplash.com/photo-1507245921392-e902673ca772?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+  },
+  {
+    "id": 5,
+    "title": "Bajo eléctrico Ibanez",
+    "user": "test@test.com",
+    "description": "Un bajo versátil con un sonido potente y gran comodidad de ejecución",
+    "price": "$600.000",
+    "img": "https://images.unsplash.com/photo-1579800655570-9a80fe82533b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+  },
+  {
+    "id": 6,
+    "title": "Piano digital Roland",
+    "user": "test@test.com",
+    "description": "Un piano digital de alta calidad con teclado sensible al tacto y numerosas funciones",
+    "price": "$1.200.000",
+    "img": "https://images.unsplash.com/photo-1564528183203-ec84690e06a8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80"
+  },
+  {
+    "id": 7,
+    "title": "Violín Yamaha",
+    "user": "test@test.com",
+    "description": "Violín de excelente calidad, ideal para estudiantes y músicos avanzados",
+    "price": "$400.000",
+    "img": "https://images.unsplash.com/photo-1528032947483-4e1df543253a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+  },
+  {
+    "id": 8,
+    "title": "Saxofón alto Selmer",
+    "user": "test@test.com",
+    "description": "El saxofón preferido por profesionales, con un sonido cálido y potente",
+    "price": "$1.800.000",
+    "img": "https://images.unsplash.com/photo-1630492096725-d256050e7993?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+  }
+]

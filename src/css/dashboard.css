@@ -1,0 +1,37 @@
+
+.title_dashboard .h1 {
+    background-color:#0C134F;
+    padding: 1rem;
+    border-radius: 20px;
+    color: #F2884B;
+    margin-left: auto ;
+    margin-right: auto;
+
+}
+.newproperty_container {
+    margin-top: 3rem;
+}
+.btn_dashboard {
+    color:white;
+    background-color: #0C134F;
+    padding: 1rem;
+    border-radius: 5px;
+    margin: auto;
+}
+.input_dashboard {
+    margin: 2rem;
+}
+.input_dashboard::placeholder {
+    color: #0C134F;
+    margin:auto;
+    justify-content: center;
+
+}
+.dashboard_container {
+    width: 70%;
+    margin: auto;
+}
+.btn_container {
+    display: flex;
+    align-items: center;
+}

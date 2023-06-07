@@ -1,0 +1,82 @@
+.section {
+  height: 70vh;
+  width: 100%;
+  text-align: center;
+  background: linear-gradient(145deg, #2949A6, #3E588C);
+}
+
+.iconContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+}
+
+.service {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem;
+}
+
+.buyIcon,
+.rentIcon,
+.soldIcon {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: invert(55%) sepia(86%) saturate(470%) hue-rotate(330deg) brightness(102%) contrast(90%);
+  width: 100px;
+  height: 100px;
+  margin-bottom: 1rem;
+}
+
+.buyIcon {
+  background-image: url("../assets/acuerdo.png");
+}
+
+.rentIcon {
+  background-image: url("../assets/llaves.png");
+}
+
+.soldIcon {
+  background-image: url("../assets/propiedad.png");
+}
+
+.text {
+  width: 18rem;
+  margin-top: 1rem;
+}
+
+.text p {
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .section {
+    height: auto;
+  }
+  
+  .iconContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .service {
+    width: 80%;
+    margin: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .service {
+    width: 90%;
+    margin: 1rem;
+  }
+  
+  .section {
+    height: auto;
+    max-height: max-content;
+  }
+}
