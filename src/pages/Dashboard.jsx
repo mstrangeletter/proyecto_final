@@ -38,7 +38,7 @@ const Dashboard = () => {
 
   return (
     <div className="dashboard_container">
-      <h1 className="title_dashboard">CREAR NUEVA PUBLICACIÓN</h1>
+      <h1 className="title_dashboard">Bienvenido {user.name}</h1>
 
       <div className="form_container">
         <form onSubmit={handleSubmit}>
