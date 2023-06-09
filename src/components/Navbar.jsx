@@ -145,12 +145,12 @@ export default function Navbar() {
                     <PersonAddIcon />
                   </IconButton>
                 </NavLink>
-                <IconButton
+                {/* <IconButton
                 color="inherit"
                 size="large"
                 >
                   <MenuIcon />
-                </IconButton>
+                </IconButton> */}
               </>
             )}
           </Toolbar>

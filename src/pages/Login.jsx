@@ -57,10 +57,10 @@ export default function Login() {
           <div className="container_hero">
             <h1>Login</h1>
 
-            <form className="login-form__input">
+            <form onSubmit={handleSubmit}className="login-form__input">
               <TextField
                 sx={{ color: "white" }}
-                id="email-input"
+                id="email"
                 label="Ingrese Correo"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
@@ -68,7 +68,7 @@ export default function Login() {
               />
 
               <TextField
-                id="password-input"
+                id="password"
                 label="Ingrese Password"
                 value={password}
                 type={showPassword ? "text" : "password"}
