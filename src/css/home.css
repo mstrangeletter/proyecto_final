@@ -182,6 +182,10 @@ section {
     width: 290px;
   }
 }
+.searchSection {
+  margin:auto;
+
+}
 .container_inputSearch {
   width: 50%;
   height: 1rem;

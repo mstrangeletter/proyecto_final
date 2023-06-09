@@ -1,5 +1,6 @@
 import React, { useState, useContext } from "react";
 import Swal from "sweetalert2";
+
 import { UserContext } from "../context/UserContext";
 import { useNavigate } from "react-router-dom";
 import "../css/login.css";
@@ -28,12 +29,21 @@ export default function Login() {
 
     setError(false);
 
+    // Validar formato de correo electrónico
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!email.trim()) {
       setError(true);
       return Swal.fire({
         icon: "error",
         title: "Oops...",
         text: "Falta llenar el email",
+      });
+    } else if (!emailRegex.test(email)) {
+      setError(true);
+      return Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Formato de correo electrónico inválido",
       });
     }
 
@@ -49,6 +59,7 @@ export default function Login() {
       text: "Credenciales incorrectas",
     });
   };
+
 
   return (
     <main>
@@ -69,6 +80,7 @@ export default function Login() {
 
               <TextField
                 id="password"
+                
                 label="Ingrese Password"
                 value={password}
                 type={showPassword ? "text" : "password"}

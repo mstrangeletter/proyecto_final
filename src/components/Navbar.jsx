@@ -123,11 +123,7 @@ export default function Navbar() {
                   </IconButton>
                 </NavLink>
                 <NavLink to="/carrito" style={{ color: "white" }}>
-                  <IconButton color="inherit" >
-                    <Badge badgeContent={favorites.length} color="error">
-
-                    </Badge>
-                  </IconButton>
+               
                 </NavLink>
                 <IconButton color="inherit" onClick={logout} style={{ color: "white" }}>
                   <LogoutIcon />
