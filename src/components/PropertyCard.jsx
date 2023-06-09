@@ -1,17 +1,46 @@
-import React, { useState, useContext } from "react";
-import FavButton from "./FavButtom";
+import React, { useContext } from "react";
+import { styled } from "@mui/material/styles";
+import Card from "@mui/material/Card";
+import CardHeader from "@mui/material/CardHeader";
+import CardMedia from "@mui/material/CardMedia";
+import CardContent from "@mui/material/CardContent";
+import CardActions from "@mui/material/CardActions";
+import Collapse from "@mui/material/Collapse";
+import Avatar from "@mui/material/Avatar";
+import IconButton from "@mui/material/IconButton";
+import Typography from "@mui/material/Typography";
+import { red } from "@mui/material/colors";
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import ShareIcon from "@mui/icons-material/Share";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import MoreVertIcon from "@mui/icons-material/MoreVert";
 import { PropertyContext } from "../context/PropertyContext";
 import { FavoritesContext } from "../context/FavoritesContext";
+import { UserContext } from "../context/UserContext";
 import "../assets/whatsapp.png";
-import WspLogo from "../css/propertyCard.css";
+
+// Estilos personalizados para el botón de expandir/colapsar
+const ExpandMore = styled((props) => {
+  const { expand, ...other } = props;
+  return <IconButton {...other} />;
+})(({ theme, expand }) => ({
+  transform: !expand ? "rotate(0deg)" : "rotate(180deg)",
+  marginLeft: "auto",
+  transition: theme.transitions.create("transform", {
+    duration: theme.transitions.duration.shortest,
+  }),
+}));
 
 const PropertyCard = ({ property }) => {
-
-  const { addFavorites, deleteFavorites, favorites } = useContext(FavoritesContext);
-  const { data } = useContext(PropertyContext);
-
+  const [expanded, setExpanded] = React.useState(false);
+  const { addFavorite, deleteFavorite, favorites } = useContext(FavoritesContext);
+  const { data } = useContext(UserContext);
 
   const isPropertyInFavorites = favorites.some((item) => item.id === property.id);
+
+  const handleExpandClick = () => {
+    setExpanded(!expanded);
+  };
 
   const handleFavButtonClick = () => {
     if (!isPropertyInFavorites) {
@@ -22,34 +51,54 @@ const PropertyCard = ({ property }) => {
   };
 
   return (
-    <article className="article_property card ">
-      <div className="card_content_property">
-        <h1 className="card_title">{property.tipo}</h1>
-        <div className="container_desc">
-          <img className="img" src={property.img} alt="" />
-          <h2 className="card_region">{property.region}</h2>
-          <p className="card_description"> {property.descripcion}</p>
-          <p className="card_price">{property.precio}</p>
-        </div>
-      </div>
-      <div className="button-fav">
-
-        <FavButton onClick={handleFavButtonClick} filled={isPropertyInFavorites} property={property} />
-      </div>
-      <div className="btns">
-        <button className="learn-more">
-          <span className="circle" aria-hidden="true">
-            <span className="icon arrow"></span>
-          </span>
-          <span
-            onClick=""
-            className="button-text">Agendar Visita</span>
-        </button>
-        <a href="https://api.whatsapp.com/send?phone=56982248448" target="_blank" rel="noopener noreferrer">
-          <div class="wsp_icon"></div>
-        </a>
-      </div>
-    </article>
+    <Card sx={{ maxWidth: 345 }}>
+      <CardHeader
+        avatar={
+          <Avatar variant="circular" aria-label="recipe">
+            M
+          </Avatar>
+        }
+        action={
+          <IconButton aria-label="settings">
+            <MoreVertIcon />
+          </IconButton>
+        }
+        title={property.tipo}
+        subheader="September 14, 2016"
+      />
+      <CardMedia component="img" height="194" image={property.img} alt="Paella dish" />
+      <CardContent>
+        <Typography variant="body2" color="text.secondary">
+          {property.region}
+        </Typography>
+      </CardContent>
+      <CardActions disableSpacing>
+        <span onClick={handleFavButtonClick}>
+          <IconButton aria-label="add to favorites">
+            <FavoriteIcon color={isPropertyInFavorites ? 'error' : 'inherit'} />
+          </IconButton>
+        </span>
+        <IconButton aria-label="share">
+          <ShareIcon />
+        </IconButton>
+        <ExpandMore
+          expand={expanded}
+          onClick={handleExpandClick}
+          aria-expanded={expanded}
+          aria-label="show more"
+        >
+          <ExpandMoreIcon />
+        </ExpandMore>
+      </CardActions>
+      <Collapse in={expanded} timeout="auto" unmountOnExit>
+        <CardContent>
+          <Typography paragraph>Detalle:</Typography>
+          <Typography paragraph>Propiedad en {property.ciudad}</Typography>
+          <Typography paragraph>Ubicada en la comuna de {property.comuna}</Typography>
+          <Typography paragraph>{property.descripcion}</Typography>
+        </CardContent>
+      </Collapse>
+    </Card>
   );
 };
 

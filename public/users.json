@@ -1,18 +1,20 @@
 [
   {
     "id": 1,
-    "name": "Kakaroto Son Goku",
+    "name": "Elvis Crespo",
     "email": "test@test.com",
-    "password": "123123",
-    "phone": "555-555-5555"
+    "password":"aA121314",
+    "phone": "555-555-5555",
+    "img" : "https://elcomercio.pe/resizer/5aJ1qlpJ7LG6l0Pz7YU6TI9hvGI=/980x528/smart/filters:format(jpeg):quality(75)/cloudfront-us-east-1.images.arcpublishing.com/elcomercio/6FUBT6XQXNHHNFOMCHIT7I34NA.jpg"
 
   },
   {
     "id": 2,
     "name": "Monkey D' Luffy ",
     "email": "admin@test.com",
-    "password": "asdasd",
-    "phone": "555-555-5599"
+    "password": "aA121314",
+    "phone": "555-555-5599",
+    "img":"https://lh3.googleusercontent.com/Ryg5ih-fOWbpEGDpbJYJz5RTq3_28Tvo2h3JQRCdiz16lw5ghitDMN6hcWA57g0d6_8VOqQYcCemRBOfZGQA64ZKkFOn71zuF1LDsXwCh4ywF-_z6VqxbBqmbQvK_-PWfZcztxDd1WDTEEUHX6GdP60"
   }
 ]
   

@@ -198,3 +198,10 @@
       opacity: 0;
     }
   }
+
+  p {
+    width: 300px;
+    color:rgb(56, 90, 194);
+    font-size: small;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }

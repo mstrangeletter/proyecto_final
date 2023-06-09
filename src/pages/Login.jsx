@@ -1,34 +1,26 @@
+import React, { useState, useContext } from "react";
 import Swal from "sweetalert2";
-import { useState, useContext } from "react";
 import { UserContext } from "../context/UserContext";
 import { useNavigate } from "react-router-dom";
 import "../css/login.css";
-import SearchInput from "../components/SearchInput";
+import { Button, TextField, IconButton, InputAdornment } from "@mui/material";
+import { Visibility, VisibilityOff } from "@mui/icons-material";
 
 export default function Login() {
-  const { users, login } = useContext(UserContext);
-  const [userLogin, setUserLogin] = useState({});
+  const { login } = useContext(UserContext);
   const navigate = useNavigate();
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
 
-  const loginUser = () => {
-    if (!userLogin.email && !userLogin.password) {
-      alert("Ingrese Credenciales");
-    } else {
-      let searchUser = users.find((u) => u.email === userLogin.email);
-      if (searchUser !== undefined) {
-        if (searchUser.password === userLogin.password) {
-          navigate("/");
-        } else {
-          alert("Contraseña incorrecta");
-        }
-      } else {
-        alert("Correo no está registrado");
-      }
-    }
+  const handleClickShowPassword = () => {
+    setShowPassword(!showPassword);
+  };
+
+  const handleMouseDownPassword = (event) => {
+    event.preventDefault();
   };
 
   const handleSubmit = (e) => {
@@ -64,35 +56,51 @@ export default function Login() {
         <div className="hero__title">
           <div className="container_hero">
             <h1>Login</h1>
-        
-            <form className="login-form__input" onSubmit={handleSubmit}>
-              <input
-                className="input_login"
-                type="text"
-                placeholder="Ingrese correo"
+
+            <form className="login-form__input">
+              <TextField
+                sx={{ color: "white" }}
+                id="email-input"
+                label="Ingrese Correo"
                 value={email}
-                onChange={({ target }) => setEmail(target.value)}
+                onChange={(e) => setEmail(e.target.value)}
+                variant="outlined"
               />
-              {error && <div className=""></div>}
-              <input
-                className="input_login"
-                type="password"
-                placeholder="Ingrese contraseña"
+
+              <TextField
+                id="password-input"
+                label="Ingrese Password"
                 value={password}
-                onChange={({ target }) => setPassword(target.value)}
+                type={showPassword ? "text" : "password"}
+                onChange={(e) => setPassword(e.target.value)}
+                variant="outlined"
+                InputProps={{
+                  endAdornment: (
+                    <InputAdornment position="end">
+                      <IconButton
+                        aria-label="toggle password visibility"
+                        onClick={handleClickShowPassword}
+                        onMouseDown={handleMouseDownPassword}
+                        edge="end"
+                      >
+                        {showPassword ? <VisibilityOff /> : <Visibility />}
+                      </IconButton>
+                    </InputAdornment>
+                  ),
+                }}
               />
-              <button
-                onClick={loginUser}
-                className="login-form__button"
-                type="submit"
+
+              <Button
+                size="large"
+                onClick={handleSubmit}
+                variant="contained"
               >
                 Acceder
-              </button>
+              </Button>
             </form>
           </div>
         </div>
         <div className="cube-container">
-          <div className="cube"></div>
           <div className="cube"></div>
           <div className="cube"></div>
           <div className="cube"></div>

@@ -93,7 +93,7 @@ export default function SelectFilter({ onRegionChange, onCityChange, onComunaCha
         </FormControl>
       </Grid>
 
-      <Grid item xs={12} md={4} lg={3}>
+      <Grid item xs={12} md={6} lg={4}>
         <FormControl size="medium" fullWidth>
           <InputLabel id="comuna-label">Comuna</InputLabel>
           <Select
@@ -106,9 +106,58 @@ export default function SelectFilter({ onRegionChange, onCityChange, onComunaCha
             {filteredProperties
               .filter((item) => item.city === selectedCity)
               .map((propertyItem) => (
-                <MenuItem key={propertyItem.comuna} value={propertyItem.comuna}>
-                  {propertyItem.comuna}
-                </MenuItem>
+                // <MenuItem key={propertyItem.comuna} value={propertyItem.comuna}>
+                //   {propertyItem.comuna}
+                // </MenuItem>
+                <Card sx={{ maxWidth: 345 }}>
+      <CardHeader
+        avatar={
+          <Avatar variant="circular" aria-label="recipe">
+            M
+          </Avatar>
+        }
+        action={
+          <IconButton aria-label="settings">
+            <MoreVertIcon />
+          </IconButton>
+        }
+        title={property.tipo}
+        subheader="September 14, 2016"
+      />
+      <CardMedia component="img" height="194" image={property.img} alt="Paella dish" />
+      <CardContent>
+        <Typography variant="body2" color="text.secondary">
+          {property.region}
+        </Typography>
+      </CardContent>
+      <CardActions disableSpacing>
+        <span onClick={handleFavButtonClick}>
+          <IconButton aria-label="add to favorites">
+            <FavoriteIcon color={isPropertyInFavorites ? 'error' : 'inherit'} />
+          </IconButton>
+        </span>
+        <IconButton aria-label="share">
+          <ShareIcon />
+        </IconButton>
+        <ExpandMore
+          expand={expanded}
+          onClick={handleExpandClick}
+          aria-expanded={expanded}
+          aria-label="show more"
+        >
+          <ExpandMoreIcon />
+        </ExpandMore>
+      </CardActions>
+      <Collapse in={expanded} timeout="auto" unmountOnExit>
+        <CardContent>
+          <Typography paragraph>Detalle:</Typography>
+          <Typography paragraph>Propiedad en {property.ciudad}</Typography>
+          <Typography paragraph>Ubicada en la comuna de {property.comuna}</Typography>
+          <Typography paragraph>{property.descripcion}</Typography>
+        </CardContent>
+      </Collapse>
+    </Card>
+                
               ))}
           </Select>
         </FormControl>

@@ -45,7 +45,7 @@ const Profile = () => {
       <h1>Profile</h1>
       <CardUser />
       <div>
-      <button className="btn_modificaprofile"onClick={openModal}>Modificar datos</button>
+      <button className="btn_modificaprofile" onClick={openModal}>Modificar datos</button>
       </div>
  
       {isModalOpen && (

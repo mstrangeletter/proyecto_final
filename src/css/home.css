@@ -16,6 +16,8 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-left: 5rem;
+  
 }
 
 .container_inputSearch {
@@ -192,4 +194,20 @@ section {
   background-color: #f2f2f2;
   padding: 20px;
   border-radius: 4px;
+}
+ 
+.input_search {
+  background-color: #f2f2f2;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding: 10px;
+  border: 1px #cbcaca solid;
+  border-radius: 7px;
+  width: 30rem;
+  float:left;
+  z-index: 1000;
+}
+.input_search::placeholder {
+  color: #585858;
+  font-size: medium;
 }

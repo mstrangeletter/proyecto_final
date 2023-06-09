@@ -3,6 +3,7 @@ import { UserContext } from "../context/UserContext";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import "../css/register.css";
+import { TextField } from "@mui/material";
 
 const Register = () => {
   const { register } = useContext(UserContext);
@@ -44,52 +45,67 @@ const Register = () => {
     <main>
       <div className="hero">
         <div className="container_hero">
-          <h1>Register</h1>
+          <h1>Registro</h1>
           <div className="">
             <form className="login-form__input" onSubmit={handleSubmit}>
-              <input
-                className="input_login"
-                type="text"
-                placeholder="Nombre"
+              <TextField
+                required
+                id="filled-required"
+                label="Nombre"
                 value={name}
+                variant="filled"
                 onChange={(e) => setName(e.target.value)}
               />
-              <input
-                className="input_login"
-                type="email"
-                placeholder="Correo"
+              <TextField
+                required
+                id="filled-required"
+                label="Correo"
                 value={email}
+                variant="filled"
                 onChange={(e) => setEmail(e.target.value)}
               />
-              <input
-                className="input_login"
-                type="tel"
-                placeholder="Fono"
-                value={phone}
-                onChange={(e) => setPhone(e.target.value)}
-              />
-              <input
-                className="input_login"
+              
+              <TextField
+                required
                 type="password"
-                placeholder="Contraseña"
+                id="filled-required"
+                label="Contraseña"
                 value={password}
+                variant="filled"
                 onChange={(e) => setPassword(e.target.value)}
               />
-              <input
-                className="input_login"
+              <TextField
+                required
                 type="password"
-                placeholder="Confirme contraseña"
+                id="filled-required"
+                label="Reingrese Contraseña"
                 value={repassword}
+                variant="filled"
                 onChange={(e) => setRepassword(e.target.value)}
               />
+              
+              <TextField
+                required
+                id="filled-required"
+                label="Ingrese Fono"
+                value={phone}
+                variant="filled"
+                onChange={(e) => setPhone(e.target.value)}
+              />
+             
               <button className="login-form__button" type="submit">
                 Registrar
               </button>
+              <div className="about_pass">
+                <p>
+                  La contraseña debe tener al menos 8 caracteres, incluyendo al menos una letra minúscula, una letra mayúscula y un número
+                </p>
+              </div>
             </form>
           </div>
         </div>
         <div className="cube-container">
-          <div className="cube"></div>
+          
           <div className="cube"></div>
           <div className="cube"></div>
           <div className="cube"></div>

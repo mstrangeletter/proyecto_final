@@ -24,13 +24,16 @@
    }
 
 .hero {
-  background-color: #0040C1;
+
   position: relative;
   height: 100vh;
   overflow: hidden;
   font-family: 'Montserrat', sans-serif;
 }
 
+.container_hero h1{
+  color:#00258A;
+}
 .hero__title {
   color: #fff;
   position: absolute;
@@ -61,7 +64,7 @@
 .login-form__button {
   width: 330px;
   padding: 10px;
-  background-color: #0d0e0e;
+  background-color: #00258A;
   color: #fff;
   border: none;
   cursor: pointer;

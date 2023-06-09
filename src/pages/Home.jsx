@@ -4,7 +4,6 @@ import { Grid } from "@mui/material";
 import PropertyCard from "../components/PropertyCard";
 import SelectFilter from "../components/SelectFilter";
 import Services from "../components/Services";
-import SearchInput from "../components/SearchInput";
 import "../css/home.css";
 
 const Home = () => {
@@ -39,14 +38,16 @@ const Home = () => {
       const cityMatch = !selectedCity || propertyItem.city === selectedCity;
       const comunaMatch = !selectedComuna || propertyItem.comuna === selectedComuna;
 
-      return regionMatch && cityMatch && comunaMatch;
+      const filterLocation = regionMatch && cityMatch && comunaMatch;
+      const filterText = propertyItem.descripcion.toLowerCase().includes(searchText.toLocaleLowerCase());
+      return filterLocation && filterText;    
     });
 
     setFilteredProperties(filteredProperties);
   }, [property, selectedRegion, selectedCity, selectedComuna]);
 
-  const handleSearchTextChange = (text) => {
-    setSearchText(text);
+  const handleSearchTextChange = (event) => {
+    setSearchText(event.target.value);
   };
 
   const filteredAndSearchedProperties = filteredProperties.filter((propertyItem) =>
@@ -68,7 +69,9 @@ const Home = () => {
       </div>
       <section className="searchSection">
         <div className="container_inputSearch">
-          <SearchInput onSearchTextChange={handleSearchTextChange} />
+          {/* <SearchInput onSearchTextChange={handleSearchTextChange} /> */}
+          <input type="text" name="search" placeholder="Buscar" className="input_search" value={searchText} onChange={handleSearchTextChange} />
+
         </div>
         <div className="select_filter">
           <SelectFilter
