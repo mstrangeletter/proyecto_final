@@ -6,12 +6,11 @@ import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
 import CardActions from "@mui/material/CardActions";
 import Collapse from "@mui/material/Collapse";
-import Avatar from "@mui/material/Avatar";
-import IconButton from "@mui/material/IconButton";
+import MapsHomeWorkIcon from '@mui/icons-material/MapsHomeWork';import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import { red } from "@mui/material/colors";
 import FavoriteIcon from "@mui/icons-material/Favorite";
-import ShareIcon from "@mui/icons-material/Share";
+import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import { PropertyContext } from "../context/PropertyContext";
@@ -30,6 +29,13 @@ const ExpandMore = styled((props) => {
     duration: theme.transitions.duration.shortest,
   }),
 }));
+
+const openWhatsApp = () => {
+  const phoneNumber = '56982248448';
+  const url = `https://wa.me/${phoneNumber}`;
+
+  window.open(url, '_blank');
+};
 
 const PropertyCard = ({ property }) => {
   const [expanded, setExpanded] = React.useState(false);
@@ -54,9 +60,9 @@ const PropertyCard = ({ property }) => {
     <Card sx={{ maxWidth: 345 }}>
       <CardHeader
         avatar={
-          <Avatar variant="circular" aria-label="recipe">
-            M
-          </Avatar>
+          <MapsHomeWorkIcon variant="circular" aria-label="recipe">
+            
+          </MapsHomeWorkIcon>
         }
         action={
           <IconButton aria-label="settings">
@@ -79,7 +85,9 @@ const PropertyCard = ({ property }) => {
           </IconButton>
         </span>
         <IconButton aria-label="share">
-          <ShareIcon />
+          <WhatsAppIcon 
+          onClick={openWhatsApp}
+          color="success" />
         </IconButton>
         <ExpandMore
           expand={expanded}
