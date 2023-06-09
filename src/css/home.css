@@ -184,13 +184,17 @@ section {
 }
 .container_inputSearch {
   width: 50%;
-
-
   height: 1rem;
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
-
+.input_search {
+  width: 50%;
+  height: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  
+}
 .propertyList {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -211,11 +215,15 @@ section {
   padding: 10px;
   border: 1px #cbcaca solid;
   border-radius: 7px;
-  width: 30rem;
+  width: 20rem;
   float:left;
   z-index: 1000;
+}
+.input_search {
+  
 }
 .input_search::placeholder {
   color: #585858;
   font-size: medium;
+  width: 50%;
 }
